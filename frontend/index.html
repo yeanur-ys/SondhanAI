@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shondhan AI · সন্ধান</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="login" class="login" hidden>
+    <form id="login-form" class="login-card">
+      <div class="brand-lg">Shondhan AI <span>সন্ধান</span></div>
+      <p class="muted">Missing-child search network · authorised personnel only</p>
+      <label>Username <input name="username" autocomplete="username" required></label>
+      <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn primary" type="submit">Sign in</button>
+      <p id="login-error" class="error"></p>
+      <p class="muted small">Demo accounts: admin / admin123 · officer / officer123 · registrar / registrar123</p>
+    </form>
+  </div>
+
+  <div id="app" hidden>
+    <header class="topbar">
+      <div class="brand">Shondhan AI <span>সন্ধান</span></div>
+      <nav id="nav">
+        <a href="#alerts">Alerts <b id="pending-badge" class="badge" hidden></b></a>
+        <a href="#cases">Cases</a>
+        <a href="#new-case" data-perm="case:create">Register case</a>
+        <a href="#scan" data-perm="scan:run">Scan footage</a>
+        <a href="#live" data-perm="scan:run">Live camera</a>
+        <a href="#audit" data-perm="audit:view">Audit log</a>
+      </nav>
+      <div class="who"><span id="who"></span> <button id="logout" class="btn ghost small">Sign out</button></div>
+    </header>
+    <main id="view"></main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
